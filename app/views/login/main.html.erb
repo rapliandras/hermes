@@ -1,0 +1,15 @@
+<h1>Would you like to log in?</h1>
+<h2>Fill in the blanks!</h2>
+
+
+<%= form_tag(
+	{:controller => 'login', :action => 'main'},
+	{:id => "login_form"}
+)
+%>
+        <label for="username">Username:</label><br />
+        <%= text_field :user, :login %><br />
+        <label for="password">Password:</label><br />
+        <%= password_field :user, :password%><br />
+        <%= submit_tag 'Login' %>
+      <% $end %>

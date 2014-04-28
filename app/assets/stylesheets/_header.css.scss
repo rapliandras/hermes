@@ -1,0 +1,19 @@
+
+body{
+	font-family: Calibri, "Helvetica Neue", Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+header{
+	padding:5px 0 0 0;
+	height:50px;
+	background:image-url('header.png'); //sass -> app/assets/header.png
+}
+
+header h1{
+	margin: 0;
+	padding: 0;
+	text-align:center;
+	color: white;
+}
