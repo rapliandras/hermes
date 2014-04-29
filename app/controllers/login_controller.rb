@@ -3,7 +3,11 @@ class LoginController < ApplicationController
   	#do stuff here
   	if request.post? then
   		#check for existing model and
-  		@u = params[:user]
+  		if !params[:user].nil? then 
+  			@u = params[:user]
+  		else
+  			@u = nil
+  		end
   		redirect_to '/'
   	end
   end
