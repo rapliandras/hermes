@@ -5,12 +5,15 @@ class LoginController < ApplicationController
   		if params[:user][:username] && params[:user][:password] then
   			username = params[:user][:username]
     		password = params[:user][:password]
-    		user = find_by_username(username)
+    		user = User.where(username: username).first #if it exists in db
+    		@vv= user
   			#if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
-  			if user && user.password == password
+  			if user && password == password then
   				#do nothing here
   			else
   				user = nil
+  				#flash does not work for some reason. this line is of right syntax though
+  				flash[:notice] = "aas"
   			end
   		end
 
